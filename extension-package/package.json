@@ -1,0 +1,47 @@
+{
+  "name": "copy-with-timestamp",
+  "displayName": "Copy File with Timestamp",
+  "description": "This VS Code extension adds a context menu option to create a copy of a file with its modification date/time appended to the filename in the format `_yyyymmdd-hhmm`.",
+  "version": "1.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:copyWithTimestamp"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyWithTimestamp",
+        "title": "Copy File with Timestamp"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "copyWithTimestamp",
+          "group": "7_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.14.1",
+    "@types/vscode": "^1.99.1",
+    "@vscode/test-electron": "^2.5.2",
+    "typescript": "^5.8.3"
+  }
+}
